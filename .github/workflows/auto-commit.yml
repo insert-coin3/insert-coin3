@@ -19,7 +19,9 @@ jobs:
       - name: Commit & Push
         run: |
           git config user.name "Trigger-1111"
-          git config user.email "yamasaki210827@gmail.com"
+          git config user.email "231469708+Trigger-1111@users.noreply.github.com"
           git add .
           git diff --staged --quiet || git commit -m "commit: $(date)"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
